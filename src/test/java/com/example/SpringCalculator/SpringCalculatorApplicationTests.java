@@ -89,4 +89,18 @@ class SpringCalculatorApplicationTests {
 	public void numberGreaterThanThousandIsIgnored() {
 		Assert.assertEquals(5,SpringCalculatorApplication.add("5,1003"));
 	}
+	@Test
+	//accept multiple custom delimiters number of times add is called
+	public void multipleSingleCharacterCustomDelimitersAreValid() {
+		Assert.assertEquals(6,SpringCalculatorApplication.add("//[*][.]\n1*2.3"));
+	}
+	@Test
+	public void singleMultiCharacterCustomDelimitersAreValid() {
+		Assert.assertEquals(6,SpringCalculatorApplication.add("//[***]\n1***2***3"));
+	}
+	@Test
+	public void manyMultiCharacterCustomDelimitersAreValid() {
+		Assert.assertEquals(6,SpringCalculatorApplication.add("//[**][..]\n1**2..3"));
+		Assert.assertEquals(6,SpringCalculatorApplication.add("//[**][%%]\n1**2%%3"));
+	}
 }
