@@ -20,4 +20,10 @@ class SpringCalculatorApplicationTests {
 		Assert.assertEquals(8, SpringCalculatorApplication.add("8"));
 		Assert.assertEquals(9, SpringCalculatorApplication.add("9"));
 	}
+	@Test
+	public void twoValuesWithCommaDelimiterReturnSum() {
+		Assert.assertEquals(3,SpringCalculatorApplication.add("1,2"));
+		Assert.assertEquals(8,SpringCalculatorApplication.add("5,3"));
+		
+	}
 }
