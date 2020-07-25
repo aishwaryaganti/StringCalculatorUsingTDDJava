@@ -63,14 +63,25 @@ class SpringCalculatorApplicationTests {
 		}
 	}
 	@Test
-	//Show the negative numbers while throwing the exception
-	public void negativeValuesRaiseExceptionByLoggingNegativeValues() {
+	//Show the negative number while throwing the exception
+	public void negativeValuesRaiseExceptionByLoggingNegativeValue() {
 		try {
 			SpringCalculatorApplication.add("10,-1");
 			fail("Negatives not allowed");
 		}
 		catch(RuntimeException ex) {
 			Assert.assertEquals("Negatives not allowed: -1",ex.getMessage());
+		}
+	}
+	@Test
+	//Show all the numbers while throwing error
+	public void negativeValuesRaiseExceptionByLoggingAllNegativeValues() {
+		try {
+			SpringCalculatorApplication.add("-3,-1");
+			fail("Negatives not allowed");
+		}
+		catch(RuntimeException ex) {
+			Assert.assertEquals("Negatives not allowed: -3, -1",ex.getMessage());
 		}
 	}
 }
