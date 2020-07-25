@@ -15,7 +15,7 @@ public class SpringCalculatorApplication {
 				Matcher m=Pattern.compile("//(.)\n(.*)").matcher(numbers);
 				m.matches();
 				String customDelimiter=m.group(1);
-				numberArray=m.group(2).split(customDelimiter);
+				numberArray=m.group(2).split(Pattern.quote(customDelimiter));
 			}
 			else {
 				numberArray=numbers.split(",|\n");

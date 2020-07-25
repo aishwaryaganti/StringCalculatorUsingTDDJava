@@ -47,5 +47,8 @@ class SpringCalculatorApplicationTests {
 	public void differentDelimitersAreValidDelimiters() {
 		Assert.assertEquals(6,SpringCalculatorApplication.add("//;\n1;2;3"));
 		Assert.assertEquals(3,SpringCalculatorApplication.add("//p\n1p2"));
+		//Regex values should also be accepted as delimiters
+		Assert.assertEquals(5,SpringCalculatorApplication.add("//.\n3.2"));
+		Assert.assertEquals(11,SpringCalculatorApplication.add("//*\n1*10"));
 	}
 }
