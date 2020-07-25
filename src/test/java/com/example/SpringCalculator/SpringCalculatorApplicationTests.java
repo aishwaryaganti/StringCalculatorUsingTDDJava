@@ -51,4 +51,15 @@ class SpringCalculatorApplicationTests {
 		Assert.assertEquals(5,SpringCalculatorApplication.add("//.\n3.2"));
 		Assert.assertEquals(11,SpringCalculatorApplication.add("//*\n1*10"));
 	}
+	@Test
+	//throw an exception “negatives not allowed” 
+	public void negativeValuesRaiseException() {
+		try {
+			SpringCalculatorApplication.add("10,-1");
+			fail("Negatives not allowed");
+		}
+		catch(RuntimeException ex) {
+			//<<<< Exception caught >>>>
+		}
+	}
 }

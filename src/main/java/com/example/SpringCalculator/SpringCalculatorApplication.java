@@ -23,6 +23,9 @@ public class SpringCalculatorApplication {
 			
 			int sum=0;
 			for(String var : numberArray) {
+				if(Integer.parseInt(var)<0) {
+					throw new RuntimeException();
+				}
 				sum=sum+Integer.parseInt(var);
 			}
 			return sum;
