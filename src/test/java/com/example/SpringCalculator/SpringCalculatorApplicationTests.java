@@ -59,7 +59,18 @@ class SpringCalculatorApplicationTests {
 			fail("Negatives not allowed");
 		}
 		catch(RuntimeException ex) {
-			//<<<< Exception caught >>>>
+			//<<<< Exception caught >>>>"Negatives not allowed: "
+		}
+	}
+	@Test
+	//Show the negative numbers while throwing the exception
+	public void negativeValuesRaiseExceptionByLoggingNegativeValues() {
+		try {
+			SpringCalculatorApplication.add("10,-1");
+			fail("Negatives not allowed");
+		}
+		catch(RuntimeException ex) {
+			Assert.assertEquals("Negatives not allowed: -1",ex.getMessage());
 		}
 	}
 }
