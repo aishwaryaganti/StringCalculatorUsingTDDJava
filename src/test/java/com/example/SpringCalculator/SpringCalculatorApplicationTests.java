@@ -84,4 +84,9 @@ class SpringCalculatorApplicationTests {
 			Assert.assertEquals("Negatives not allowed: -3, -1",ex.getMessage());
 		}
 	}
+	@Test
+	//Ignore numbers greater than 1000
+	public void numberGreaterThanThousandIsIgnored() {
+		Assert.assertEquals(5,SpringCalculatorApplication.add("5,1003"));
+	}
 }

@@ -29,6 +29,9 @@ public class SpringCalculatorApplication {
 				if(Integer.parseInt(var)<0) {
 					negatives.add(Integer.parseInt(var));
 				}
+				else if(Integer.parseInt(var)>=1000) {
+					continue;
+				}
 				else {
 					sum=sum+Integer.parseInt(var);
 				}
