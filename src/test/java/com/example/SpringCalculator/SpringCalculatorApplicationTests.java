@@ -2,7 +2,8 @@ package com.example.SpringCalculator;
 import org.junit.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
-class SpringCalculatorApplicationTests {
+
+public class SpringCalculatorApplicationTests {
 
 	@Test
 	// Return zero if there is empty String
