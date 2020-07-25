@@ -8,7 +8,12 @@ public class SpringCalculatorApplication {
 		}
 		else if(numbers.contains(",")) {
 			String[] numberArray=numbers.split(",");
-			return (Integer.parseInt(numberArray[0])+Integer.parseInt(numberArray[1]));
+			int sum=0;
+			for(String var : numberArray) {
+				sum=sum+Integer.parseInt(var);
+			}
+			return sum;
+			//return (Integer.parseInt(numberArray[0])+Integer.parseInt(numberArray[1]));
 		}
 		else {
 			return Integer.parseInt(numbers);
