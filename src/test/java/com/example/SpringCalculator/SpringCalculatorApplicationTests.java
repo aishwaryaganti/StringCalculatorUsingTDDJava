@@ -42,4 +42,10 @@ class SpringCalculatorApplicationTests {
 		Assert.assertEquals(6,SpringCalculatorApplication.add("1\n2,3"));
 		Assert.assertEquals(3,SpringCalculatorApplication.add("1\n2"));
 	}
+	@Test
+	//Accept any custom delimiter
+	public void differentDelimitersAreValidDelimiters() {
+		Assert.assertEquals(6,SpringCalculatorApplication.add("//;\n1;2;3"));
+		Assert.assertEquals(3,SpringCalculatorApplication.add("//p\n1p2"));
+	}
 }
