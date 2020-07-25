@@ -36,4 +36,10 @@ class SpringCalculatorApplicationTests {
 		Assert.assertEquals(3,SpringCalculatorApplication.add("1,1,1"));
 		Assert.assertEquals(24,SpringCalculatorApplication.add("7,10,7"));
 	}
+	@Test
+	//New line is a valid Delimiter
+	public void newLineIsValidDelimiter() {
+		Assert.assertEquals(6,SpringCalculatorApplication.add("1\n2,3"));
+		Assert.assertEquals(3,SpringCalculatorApplication.add("1\n2"));
+	}
 }
