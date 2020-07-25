@@ -6,17 +6,14 @@ public class SpringCalculatorApplication {
 		if(numbers.isEmpty()) {
 			return 0;
 		}
-		else if(numbers.contains(",")) {
-			String[] numberArray=numbers.split(",");
+		else {
+			String[] numberArray=numbers.split(",|\n");
 			int sum=0;
 			for(String var : numberArray) {
+				//System.out.println(var);
 				sum=sum+Integer.parseInt(var);
 			}
 			return sum;
-			//return (Integer.parseInt(numberArray[0])+Integer.parseInt(numberArray[1]));
-		}
-		else {
-			return Integer.parseInt(numbers);
 		}
 	}
 
